@@ -1,0 +1,8 @@
+<div *ngFor="let area of reassembledData; let i = index" class="area-container">
+  <h2 class="typography-heading">Zona {{ area.numArea }}</h2>
+  <app-card
+    (onCLick)="alertClickedCard($event)"
+    [contentCard]="reassembledData[i].areaContent"
+    [numArea]="reassembledData[i].numArea"
+  ></app-card>
+</div>

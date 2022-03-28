@@ -1,0 +1,15 @@
+:host {
+  color: #fff;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+.typography-heading {
+  margin: 0;
+  font-weight: 400;
+  font-size: 22px;
+  margin-left: 15px;
+}

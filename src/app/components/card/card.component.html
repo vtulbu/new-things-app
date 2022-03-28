@@ -1,0 +1,26 @@
+<div class="card-container" *ngFor="let content of contentCard; let i = index">
+  <div
+    [id]="content.sku"
+    [title]="'Item ' + content.sku + ', Area ' + numArea"
+    class="card"
+    [ngClass]="{
+      open: statusOfCard[i] === 'open',
+      closed: statusOfCard[i] === 'closed',
+      orange: statusOfCard[i] === 'orange'
+    }"
+    (click)="onClick($event)"
+  >
+    <p class="content-par">{{ content.sku }}</p>
+    <p class="superscript-par">{{ content.defaultSku }}</p>
+  </div>
+  <div
+    [id]="item.sku"
+    [title]="'Item ' + item.sku + ', Area ' + numArea"
+    class="card child"
+    *ngFor="let item of contentCard[i].joinedWithChild"
+    (click)="onClick($event)"
+  >
+    <p class="content-par">{{ item.sku }}</p>
+    <p class="superscript-par">{{ item.defaultSku }}</p>
+  </div>
+</div>
