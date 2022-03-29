@@ -43,5 +43,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 3. With ngFor directive are created areas and are passed cardContent array to card component.
 4. In card component are created card containers(with ngFor directive) which correspond to the number of unique IDs for each area.
+
    4.1.Additionaly card component run a function that establish what are status of group or unique ID to apply left indicator accordingly (open: green, closed: red, neutral: orange)
+   
 5. Finally, data is passed to the item component which inserts sku and defaultSku in 2 paragraphs.
