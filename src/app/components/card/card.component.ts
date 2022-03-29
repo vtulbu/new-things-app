@@ -30,11 +30,11 @@ export class CardComponent implements OnInit {
       if (e.status === 'open') {
         return e.joinedWithChild.every((e) => e.status === 'open')
           ? 'open'
-          : 'orange';
+          : 'neutral';
       } else {
         return e.joinedWithChild.every((e) => e.status === 'closed')
           ? 'closed'
-          : 'orange';
+          : 'neutral';
       }
     });
   }

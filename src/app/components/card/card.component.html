@@ -6,12 +6,11 @@
     [ngClass]="{
       open: statusOfCard[i] === 'open',
       closed: statusOfCard[i] === 'closed',
-      orange: statusOfCard[i] === 'orange'
+      orange: statusOfCard[i] === 'neutral'
     }"
     (click)="onClick($event)"
   >
-    <p class="content-par">{{ content.sku }}</p>
-    <p class="superscript-par">{{ content.defaultSku }}</p>
+    <app-item [sku]="content.sku" [defaultSku]="content.defaultSku"></app-item>
   </div>
   <div
     [id]="item.sku"
@@ -20,7 +19,6 @@
     *ngFor="let item of contentCard[i].joinedWithChild"
     (click)="onClick($event)"
   >
-    <p class="content-par">{{ item.sku }}</p>
-    <p class="superscript-par">{{ item.defaultSku }}</p>
+    <app-item [sku]="item.sku" [defaultSku]="item.defaultSku"></app-item>
   </div>
 </div>

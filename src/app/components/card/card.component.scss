@@ -3,7 +3,6 @@
   flex-wrap: wrap;
   gap: 10px;
   margin: 10px 0 40px;
-  max-width: 100vw;
 }
 
 .card-container {
@@ -13,40 +12,24 @@
 }
 
 .card {
-  padding: 30px 0;
-  text-align: center;
-  font-size: 22px;
   width: 140px;
+  padding: 30px 0;
+  font-size: 22px;
+  cursor: pointer;
   background-color: #2b4e87;
   border-radius: 7px;
   position: relative;
-  cursor: pointer;
-  transition: all 150ms ease-in-out;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 150ms ease-in-out;
 }
 
 .card:hover {
   background-color: #3965ad;
 }
 
-// centered paragraphe
-.content-par {
-  margin: 0;
-  line-height: 1;
-}
-
-// paragraphe right up
-.superscript-par {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  font-size: 16px;
-  margin: 0;
-}
-
-// conecting line card with same joining ID
+// conecting line card with the same joining ID
 .child::before {
   content: "";
   position: absolute;
@@ -57,7 +40,7 @@
   z-index: -1;
 }
 
-// status of bar for Card
+// status of bar for Card or group
 .open::before,
 .closed::before,
 .orange::before {
@@ -76,8 +59,4 @@
 
 .orange::before {
   background-color: #ff9800;
-}
-
-.classClick {
-  transform: rotate(30deg);
 }

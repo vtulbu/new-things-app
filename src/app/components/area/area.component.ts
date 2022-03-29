@@ -3,16 +3,6 @@ import { GetDataService } from '@app/services/get-data.service';
 
 import { DataInterface } from '@data/newThings';
 
-interface AreaContent {
-  id: number;
-  areaId: number;
-  sku: string;
-  defaultSku: string;
-  status: 'open' | 'closed';
-  countActive: number;
-  joinedWithChild: DataInterface[];
-}
-
 @Component({
   selector: 'app-area',
   templateUrl: './area.component.html',
@@ -24,7 +14,7 @@ export class AreaComponent implements OnInit {
   reassembledData: {
     numArea: number;
     areaId: number;
-    areaContent: {
+    cardContent: {
       id: number;
       areaId: number;
       sku: string;
@@ -55,6 +45,8 @@ export class AreaComponent implements OnInit {
     // implemented simple event function
   }
 
+  error: string = '';
+
   constructor(private getDataService: GetDataService) {}
 
   ngOnInit(): void {
@@ -84,7 +76,7 @@ export class AreaComponent implements OnInit {
               return {
                 numArea: 1,
                 areaId: e,
-                areaContent: this.uniqueId.filter(
+                cardContent: this.uniqueId.filter(
                   (element: { areaId: number }) => element.areaId === e
                 ),
               };
@@ -92,7 +84,7 @@ export class AreaComponent implements OnInit {
               return {
                 numArea: 2,
                 areaId: e,
-                areaContent: this.uniqueId.filter(
+                cardContent: this.uniqueId.filter(
                   (element: { areaId: number }) => element.areaId === e
                 ),
               };
@@ -100,7 +92,7 @@ export class AreaComponent implements OnInit {
               return {
                 numArea: 4,
                 areaId: e,
-                areaContent: this.uniqueId.filter(
+                cardContent: this.uniqueId.filter(
                   (element: { areaId: number }) => element.areaId === e
                 ),
               };
@@ -108,7 +100,7 @@ export class AreaComponent implements OnInit {
               return {
                 numArea: 5,
                 areaId: e,
-                areaContent: this.uniqueId.filter(
+                cardContent: this.uniqueId.filter(
                   (element: { areaId: number }) => element.areaId === e
                 ),
               };
@@ -116,7 +108,7 @@ export class AreaComponent implements OnInit {
               return {
                 numArea: this.numOfZones + i + 2,
                 areaId: e,
-                areaContent: this.uniqueId.filter(
+                cardContent: this.uniqueId.filter(
                   (element: { areaId: number }) => element.areaId === e
                 ),
               }; // in case additional area is added
